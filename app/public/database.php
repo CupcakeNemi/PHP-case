@@ -23,11 +23,11 @@ try {
 
      // -journal
      // Create the journal table
-    $pdo->exec("CREATE TABLE IF NOT EXISTS journal (
+    $pdo->exec("CREATE TABLE IF NOT EXISTS posts (
         id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
         text TEXT NOT NULL,
         user_id INT(11) UNSIGNED NOT NULL,
-        CONSTRAINT `fk_journal_user`
+        CONSTRAINT `fk_posts_user`
             FOREIGN KEY (user_id)
             REFERENCES user(id)
             ON DELETE CASCADE

@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 *{
     margin: 0;
     padding: 0;
@@ -5,12 +9,40 @@
 }
 body{
     background-color: #333034;
+    font-family: 'Poppins', sans-serif;
+
+}
+.super-container{
+    display: flex;
 }
 
 header{
     background: linear-gradient(#dd306f, #7d1f36);
+    height: 100vh;
+    flex-direction: column;
+
 }
+
+.link-wrapper{
+    flex-direction: column;
+}
+
+.form{
+    flex-direction: column;
+}
+
+.redirect{
+    flex-direction: column;
+}
+
 a{
+    display: block;
+    flex-direction: column;
     text-decoration: none;
+    color: #170613;
+    padding: 4px 50px 4px 50px;
+}
+
+a:active{
     color: #FFE3FE;
 }

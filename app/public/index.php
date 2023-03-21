@@ -6,14 +6,18 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://unpkg.com/mvp.css@1.12/mvp.css"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./src/input.css">
-    <title>Simple Crud App</title>
+    <title>Namnlös PHP Case</title>
 </head>
 <body>
-    
-    <main>
+    <div class="super-container">
+    <?php
+    include './partials/header.php';
+    ?>
     <?php 
     // Write out message from other pages if exists
     
@@ -22,11 +26,10 @@
         unset( $_SESSION['message']); // remove it once it has been written
     }
     ?>
-    <h1>Journal</h1>
-    <a href="create.php">Add Journal Entry</a>
+    <h1>Dashboard</h1>
     <?php 
         // Query the database
-        $sqlquery = "SELECT * FROM journal";
+        $sqlquery = "SELECT * FROM posts";
         $result = $pdo->query($sqlquery);
 
         // Render the data
@@ -45,6 +48,6 @@
         echo "</section>";
 
     ?>
-    </main>
+    </div>
 </body>
 </html>

@@ -37,15 +37,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://unpkg.com/mvp.css@1.12/mvp.css"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./src/input.css">
-    <title>Simple Crud App</title>
+    <title>Namnlös PHP Case - Register</title>
 </head>
 <body>
+<div class="super-container">
     <?php
     include './partials/header.php';
     ?>
-    <main>
         <?php 
         // Write out message from other pages if exists
         if (isset($_SESSION['message']) && !empty($_SESSION['message'])) {
@@ -53,7 +55,10 @@
             unset( $_SESSION['message']); // remove it once it has been written
         }
         ?>
+
         <h1>Register New User</h1>
+
+        <div class="form">
         <form action="" method="post">
             <label for="username">Username: </label>
             <input type="text" name="username" id="username" />
@@ -63,7 +68,11 @@
 
             <input type="submit" value="Register" />
         </form>
+        </div>
+
+        <div class="redirect">
         <p>Already have an account? <a href="login.php">Login</a> here.</p>
-    </main>
+        </div>
+    </div>
 </body>
 </html>
