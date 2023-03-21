@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #333034;
+}
+
+header{
+    background: linear-gradient(#dd306f, #7d1f36);
+}
+a{
+    text-decoration: none;
+    color: #FFE3FE;
+}
