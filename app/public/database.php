@@ -14,19 +14,23 @@ try {
 
      // ensure that neccessary tables exists
 
-     // -user
+     //* user
     $pdo->exec("CREATE TABLE IF NOT EXISTS user (
         id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
         username VARCHAR(50) UNIQUE NOT NULL,
         password VARCHAR(255) NOT NULL
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci");
 
-     // -journal
-     // Create the journal table
+     //* Posts
+    //? Hjälp med att lägga till fler saker
+     // Create the Posts table
     $pdo->exec("CREATE TABLE IF NOT EXISTS posts (
         id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
         text TEXT NOT NULL,
-        user_id INT(11) UNSIGNED NOT NULL,
+        user_id INT(11) UNSIGNED NOT NULL, 
+        `date` DATE DEFAULT CURRENT_TIMESTAMP, 
+        `title` VARCHAR(45), 
+        `image` BLOB,
         CONSTRAINT `fk_posts_user`
             FOREIGN KEY (user_id)
             REFERENCES user(id)

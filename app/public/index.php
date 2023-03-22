@@ -1,53 +1,51 @@
-<?php 
+<?php
     session_start();
     require_once "database.php";
-?>
-<html lang="sv">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./src/input.css">
-    <title>Namnlös PHP Case</title>
-</head>
-<body>
-    <div class="super-container">
-    <?php
     include './partials/header.php';
-    ?>
+?>
     <?php 
     // Write out message from other pages if exists
     
     if (isset($_SESSION['message']) && !empty($_SESSION['message'])) {
-        echo "<article><aside><p>". $_SESSION['message'] . "</p></aside></article>";
-        unset( $_SESSION['message']); // remove it once it has been written
+        echo '<div id="message">' . $_SESSION['message'] . '</div>';
+        unset($_SESSION['message']);
     }
     ?>
-    <h1>Dashboard</h1>
+    <script>
+        setTimeout(function(){
+            document.getElementById('message').style.display = 'none';
+        }, 2000);
+    </script>
+    <div class="flex items-center flex-col w-screen">
+
+    <div class="flex">
+    <h1 class="p-10">Dashboard</h1>
+    </div>
     <?php 
         // Query the database
         $sqlquery = "SELECT * FROM posts";
         $result = $pdo->query($sqlquery);
 
         // Render the data
-        echo "<section>";
+        echo '<div class=" ">';
         while($row = $result->fetch()) {
             $id = $row['id'];
-            echo "<aside>
-                    <p>" . $row['text'] . "</p>
-                    <div>
-                        <a href='delete.php?id=$id'>Delete</a>
-                        <a href='edit.php?id=$id'>Edit</a>
-                    </div>
-                </aside>
-                <hr>";
+            echo '<div class="bg-posts  px-7 pb-6  w-96 rounded-lg m-5">';
+            echo '<div class="pt-6"><h3>' . $row['title'] . '</h3></div>';
+            echo '<div><p>' . $row['text'] . '</p></div>';
+            echo '<div class=""><p>' . $row['date'] . '</p></div>';
+            echo '<div class="my-2 ">
+                        <a href="delete.php?id=$id" class="bg-button px-3 py-1 w-24 mr-2 rounded-lg">Delete</a>
+                        <a href="edit.php?id=$id" class="bg-button w-24 px-3 py-1 ml-2 rounded-lg">Edit</a>
+                        </div></div>';
+
         }
-        echo "</section>";
+        echo '</div>';
 
     ?>
+        </div>
     </div>
 </body>
+
+
 </html>
