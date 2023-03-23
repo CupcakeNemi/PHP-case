@@ -7,11 +7,12 @@
 
 <?php 
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
+    $form_title =  trim($_POST["title"]);
     $form_text = trim($_POST["text"]);
-    $form_id = $_POST["id"];
+    $form_id = trim($_POST["id"]);
 
     if (!empty($form_text)){
-        $sqlquery = "UPDATE posts SET text='$form_text' WHERE id= $form_id";
+        $sqlquery = "UPDATE posts SET title='$form_title',text='$form_text' WHERE id= $form_id";
         echo $sqlquery;
 
         $sqlstmt = $pdo->query($sqlquery);
@@ -20,7 +21,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     }
 }else {
     $id = $_GET['id'];
-    $sqlquery = "SELECT * FROM posts WHERE id= $id";
+    $id = (int)$id;
+    $sqlquery = "SELECT * FROM posts WHERE id = $id";
+
     $result = $pdo->query($sqlquery);
     $row = $result->fetch();
     $old_title = $row['title'];

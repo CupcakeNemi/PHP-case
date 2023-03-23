@@ -34,11 +34,10 @@
             echo '<div class="pt-6"><h3>' . $row['title'] . '</h3></div>';
             echo '<div><p>' . $row['text'] . '</p></div>';
             echo '<div class=""><p>' . $row['date'] . '</p></div>';
-            echo '<div class="my-2 ">
-                        <a href="delete.php?id=$id" class="bg-button px-3 py-1 w-24 mr-2 rounded-lg">Delete</a>
-                        <a href="edit.php?id=$id" class="bg-button w-24 px-3 py-1 ml-2 rounded-lg">Edit</a>
-                        </div></div>';
-
+            echo "<div class='my-2 '>
+                        <a href='delete.php?id=$id' class='bg-button px-3 py-1 w-24 mr-2 rounded-lg'>Delete</a>
+                        <a href='edit.php?id=$id' class='bg-button w-24 px-3 py-1 ml-2 rounded-lg'>Edit</a>
+                        </div></div>";
         }
         echo '</div>';
 

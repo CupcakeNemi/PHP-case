@@ -1,10 +1,10 @@
 <?php
     session_start();
     require_once "database.php";
-    include './partials/header.php';
 ?>
 <?php
     $idToRemove = $_GET['id'];
+    $idToRemove = (int)$idToRemove;
 
     if (isset($idToRemove)){
         $sqlquery = "DELETE FROM posts WHERE id=$idToRemove";

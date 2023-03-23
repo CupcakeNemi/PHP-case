@@ -6,9 +6,13 @@ if (!isset($_SESSION["user_id"])) {
     exit();
 }
 
-$sqlquery = "SELECT * FROM posts INNER JOIN user ON user_id = user_id WHERE user.username = '$username'";
+$sqlquery = "SELECT * FROM posts";
+// $sqlquery = "SELECT * FROM posts.user_id,user INNER JOIN user ON user_id = user_id WHERE user.username = '$username'";
+// SELECT Orders.OrderID, Customers.CustomerName
+// FROM Orders
+// INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID;
 // Join select (innerjoin)
-$username = $_POST['username'];
+// $username = $_POST['username'];
 //? Hjälp med date
 //? Ny post läggs inte in i databasen
 //? Hjälp med att lägga till fler saker i database.php
