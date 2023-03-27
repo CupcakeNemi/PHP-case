@@ -2,7 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-
+h1{
+    font-size: 2rem;
+    font-weight: 600;
+}
+li{
+    list-style-type: circle;
+}
 /* *{
     margin: 0;
     padding: 0;

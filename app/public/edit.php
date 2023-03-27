@@ -31,26 +31,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 }
 ob_end_flush();
 ?>
+<div class="flex items-center flex-col w-screen">
 <div>
-    <h1>Edit Post</h1>
+    <h1 class="p-10">Edit Post</h1>
 </div>
 <div>
     <form action="<?= $_SERVER['PHP_SELF'] ?>" method="post">
             <input type="number" name="id" id="id" value="<?= $id ?>" hidden>
-        <div>
-            <input type="text" name="title" id="title" placeholder="Title" value="<?= $old_title ?>" required>
+        <div class="m-1 ">
+            <input type="text" name="title" id="title" placeholder="Title" value="<?= $old_title ?>"  class="bg-posts  border-none rounded-lg pl-2 p-1 " required>
         </div>
 
-        <div class="p-20">
-            <textarea name="text" id="text" cols="30" rows="10"><?php echo $old_text ?></textarea>
+        <div class="m-1">
+            <textarea name="text" id="text" cols="30" rows="10" class="bg-posts focus:outline-none rounded-lg pl-2 p-1"><?php echo $old_text ?></textarea>
         </div>
 
-        <div class="bg-button">
-            <input type="submit" value="Submit" class=" bg-button h-40">
+        <div class=" bg-button m-10 p-2 w-24 rounded-lg pointer-events-auto">
+            <input type="submit" value="Submit" >
         </div>
     </form>
 </div>
-
+</div>
 </div>
 </body> 
 </html>
