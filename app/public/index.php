@@ -4,8 +4,6 @@
     include './partials/header.php';
 ?>
     <?php 
-    // Write out message from other pages if exists
-    
     if (isset($_SESSION['message']) && !empty($_SESSION['message'])) {
         echo '<div id="message">' . $_SESSION['message'] . '</div>';
         unset($_SESSION['message']);
@@ -22,26 +20,28 @@
     <h1 class="p-10">Dashboard</h1>
     </div>
     <?php 
-        // Query the database
         $sqlquery = "SELECT * FROM posts";
         $result = $pdo->query($sqlquery);
 
-        // Render the data
-        echo '<div class=" ">';
+
+        
         while($row = $result->fetch()) {
             $id = $row['id'];
-            echo '<div class="bg-posts  px-7 pb-6  w-96 rounded-lg m-5">';
+            echo '<div class="bg-posts px-7 pb-6  w-96 rounded-lg m-5">';
             echo '<div class="pt-6"><h3>' . $row['title'] . '</h3></div>';
-            // echo '<div><p>' . $row['text'] . '</p></div>';
             echo '<div class=""><p>' . $row['date'] . '</p></div>';
+
+            if(isset($_SESSION["user_id"])){
             echo "<div class='my-2 '>
-                        <a href='delete.php?id=$id' class='bg-button px-3 py-1 w-24 mr-2 rounded-lg'>Delete</a>
-                        <a href='edit.php?id=$id' class='bg-button w-24 px-3 py-1 ml-2 rounded-lg'>Edit</a>
-                        </div></div>";
+                        <a href='delete.php?id=$id' class='bg-button px-3 py-1 w-24 mr-2 rounded-lg'><i class='fa-solid fa-trash-can'></i></a>
+                        <a href='edit.php?id=$id' class='bg-button w-24 px-3 py-1 ml-2 rounded-lg'><i class='fa-solid fa-pen-to-square'></i></a>
+                        </div>";
         }
         echo '</div>';
+    }
 
     ?>
+
         </div>
     </div>
 </body>

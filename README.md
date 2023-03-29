@@ -12,8 +12,8 @@
     + Ha minst fyra databas-kolumner utöver primary key (t.ex title, content, created_at, site_id)
     + Vara länkad på databasnivå till en användare
     + Hantera markdown (Det fungerar att spara ner det som text och låta klienten parsa markdown till html)
-- Besökare skall kunna:
-    - Besöka olika sidor t.ex "thewebapp.com?id=about" och "thewebapp.com?id=contact" alternativt med friendly urls 
++ Besökare skall kunna:
+    + Besöka olika sidor t.ex "thewebapp.com?id=about" och "thewebapp.com?id=contact" alternativt med friendly urls 
         "thewebapp.com/page/about" och "thewebapp.com/page/contact"
 
 

@@ -7,15 +7,6 @@ if (!isset($_SESSION["user_id"])) {
 }
 
 $sqlquery = "SELECT * FROM posts";
-// $sqlquery = "SELECT * FROM posts.user_id,user INNER JOIN user ON user_id = user_id WHERE user.username = '$username'";
-// SELECT Orders.OrderID, Customers.CustomerName
-// FROM Orders
-// INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID;
-// Join select (innerjoin)
-// $username = $_POST['username'];
-//? Hjälp med date
-//? Ny post läggs inte in i databasen
-//? Hjälp med att lägga till fler saker i database.php
 $result = $pdo->query($sqlquery);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -49,7 +40,6 @@ include "./partials/header.php";
         <div class="m-1">
             <textarea name="text" id="text" cols="30" rows="10" class="bg-posts focus:outline-none rounded-lg pl-2 p-1" placeholder="Write your text here"></textarea>
         </div>
-        <!--? Lägg till bild -->
         <div class="bg-button m-10 p-2 w-24 rounded-lg">
             <input type="submit" value="Submit" class="  ">
         </div>
