@@ -20,14 +20,14 @@
 
                 <div class="flex flex-col text-darkFont">
                     <div class="flex p-2   justify-center items-center">
-                        <h1 class="text-lg font-semibold"><?= $_SESSION['username']; ?></h1>
+                        <h1 class="text-xl font-semibold"><?= $_SESSION['username']; ?></h1>
                     </div>
-                    <a href="index.php" class="p-2 font-medium "> <i class="fa-solid fa-table-cells-large pr-2"></i>Dashboard</a>
-                    <a href="create.php" class="p-2 font-medium"><i class="fa-solid fa-file-circle-plus pr-2"></i>Create page</a>
+                    <a href="index.php" class="p-2 font-medium text-lg"> <i class="fa-solid fa-table-cells-large pr-2 "></i>Dashboard</a>
+                    <a href="create.php" class="p-2 font-medium text-lg"><i class="fa-solid fa-file-circle-plus pr-2 "></i>Create page</a>
 
-                    <div id="Pages" class="p-2">
+                    <div id="Pages" class="p-2 text-lg">
                         <div class=" font-medium">
-                            <p><i class="fa-solid fa-file pr-2"></i>Pages</p>
+                            <p class="text-lg"><i class="fa-solid fa-file pr-2"></i>Pages</p>
                         </div>
                         <?php
 
@@ -38,7 +38,7 @@
                         while ($row = $result->fetch()) {
                             $id = $row['id'];
                             echo '<div class="">';
-                            echo '<a href="view.php?id=' . $row['id'] . '" class="pt-8"><h3><i class="fa-solid fa-angle-right pr-2"></i>' . $row['title'] . '</h3></a>';
+                            echo '<a href="view.php?id=' . $row['id'] . '" class="pt-8"><h3 class="font-medium text-base"><i class="fa-solid fa-angle-right pr-2 text-sm"></i>' . $row['title'] . '</h3></a>';
                             "</div>";
                         }
                         echo '</div>';
@@ -48,10 +48,10 @@
                     <div class="fixed left-12 bottom-12">
                         <?php
                         if (isset($_SESSION["user_id"])) {
-                            echo  "<a href='logout.php' class=' font-medium '><i class='fa-solid fa-arrow-right-to-bracket pr-2'></i>Logout</a>";
+                            echo  "<a href='logout.php' class=' font-medium text-base'><i class='fa-solid fa-arrow-right-to-bracket pr-2'></i>Logout</a>";
                         }
                         if (!isset($_SESSION["user_id"])) {
-                            echo  "<a href='logout.php' class='p-2 font-medium'><i class='fa-solid fa-arrow-right-to-bracket pr-2'></i>Login</a>";
+                            echo  "<a href='logout.php' class='p-2 font-medium text-base'><i class='fa-solid fa-arrow-right-to-bracket pr-2'></i>Login</a>";
                         }
                         ?>
 

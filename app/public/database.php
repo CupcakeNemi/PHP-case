@@ -1,15 +1,15 @@
 <?php 
  //* Linode
-// define('DB_SERVER', 'localhost');
-// define('DB_USERNAME', 'db_user_linode');
-// define('DB_PASSWORD', 'RxDhBntsV6cXUYfh');
-// define('DB_NAME', 'db_lamp_app');
+define('DB_SERVER', 'localhost');
+define('DB_USERNAME', 'db_user_linode');
+define('DB_PASSWORD', 'RxDhBntsV6cXUYfh');
+define('DB_NAME', 'db_lamp_app');
 
 //* Local
-define('DB_SERVER', 'mysql');
-define('DB_USERNAME', 'root');
-define('DB_PASSWORD', 'db_root_password');
-define('DB_NAME', 'db_lamp_app');
+// define('DB_SERVER', 'mysql');
+// define('DB_USERNAME', 'root');
+// define('DB_PASSWORD', 'db_root_password');
+// define('DB_NAME', 'db_lamp_app');
 
 try {
 
