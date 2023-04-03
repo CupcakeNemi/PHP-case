@@ -17,4 +17,4 @@
         "thewebapp.com/page/about" och "thewebapp.com/page/contact"
 
 
-        -gör att man bara ser sina egna posts på dashboard?
+        
